@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" slick-uniqueid="3">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./Homepage_files/sty/jemdoc.css" type="text/css">
+<style type="text/css">
+</style>
+<title>NIvsCG</title>
+</head>
+
+
+<body>
+<div id="layout-content" style="margin-top:25px">
+
+<!-- teaser -->
+<table>
+<tbody>
+  <tr>    
+    <td valign="top" align="center">     
+      <b><font size="4" face="Times New Roman" >Distinguishing between Natural and Computer-Generated Images Using Convolutional Neural Networks</font></b>
+      <br><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" align="center">
+         <font size="4" face="Times New Roman" > <a href="http://qigreen.github.io/"  target="_blank">Weize Quan</a> </font> <font size="2"><sup>123</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="http://www.gipsa-lab.grenoble-inp.fr/~kai.wang/"  target="_blank">Kai Wang</a> </font> <font size="2"><sup>3</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://sites.google.com/site/yandongming/"  target="_blank">Dong-Ming Yan</a> </font> <font size="2"><sup>1</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="http://people.ucas.ac.cn/~0005319?language=en"  target="_blank">Xiaopeng Zhang</a> </font> <font size="2"><sup>1</sup></font> &emsp;&emsp;
+         <br> 
+         <font size="2"> <sup>1</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ia.cas.cn/" target="_blank">Institute of Automation Chinese Academy of Sciences</a></font> &emsp;&emsp;
+         <font size="2"> <sup>2</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ucas.ac.cn/" target="_blank">University of Chinese Academy of Sciences</a> </font>
+         &emsp;&emsp;
+         <font size="2"> <sup>3</sup></font> <font size="3" face="Times New Roman" ><a href="http://www.gipsa-lab.fr/" target="_blank">GIPSA-lab</a> </font>
+         <br>
+         <font size="3" face="Times New Roman" > IEEE Transactions on Information Forensics & Security, 2018 </font>
+         <br> <br>
+    </td>
+    </tr>
+
+    <tr>
+      <td valign="top" align="center">
+         <img width="35%" src="./NIvsCG_files/google_prcg.png">
+         <img width="64%" src="./NIvsCG_files/network.png">
+      </td>
+    </tr>
+
+</tbody>
+</table>
+
+<!-- Abstract -->
+<h2>Abstract</h2>
+
+
+<table>
+  <tbody>
+  <tr>
+    <p style="text-align:justify;">
+    <font face="Times New Roman" >
+      Distinguishing between natural images (NIs) and computer-generated (CG) images by naked human eyes is difficult. In this work, we propose an effective method based on convolutional neural network (CNN) for this fundamental image forensic problem. Having observed the rather limited performance of training existing CNN from scratch or fine-tuning pre-trained network, we design and implement a new and appropriate network with two cascaded convolutional layers at the bottom of CNN. Our network can be easily adjusted to accommodate different sizes of input image patches while maintaining a fixed depth, a stable structure of CNN and a good forensic performance. Considering the complexity of training CNNs and the specific requirement of image forensics, we introduce the so-called \emph{local-to-global} strategy in our proposed network. Our CNN derives a forensic decision on local patches, and a global decision on a full-sized image can be easily obtained via simple majority voting. This strategy can also be used to improve the performance of existing methods that are based on hand-crafted features. Experimental results show that our method outperforms existing methods, especially in a challenging forensic scenario with NIs and CG images of heterogeneous origins. Our method also has good robustness against typical post-processing operations, such as resizing and JPEG compression. Unlike previous attempts to use CNNs for image forensics, we try to understand what our CNN has learned about the differences between NIs and CG images with the aid of adequate and advanced visualization tools.
+    </font>
+    </p>
+  </tr>
+
+    <tr>
+      <td align="center" width="25%">
+        <img src="./NIvsCG_files/thumbmail.png" width="200">
+      </td>
+      <td>
+          <strong>Paper</strong> [<a href="" target="_blank">PDF</a>] <br><br>
+          <strong>Code </strong> [<a href="https://github.com/qigreen/NIvsCG">Github</a>] <br><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>
