@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" slick-uniqueid="3">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./Homepage_files/sty/jemdoc.css" type="text/css">
+<style type="text/css">
+</style>
+<title>GDN_Inpainting</title>
+</head>
+
+
+<body>
+<div id="layout-content" style="margin-top:25px">
+
+<!-- teaser -->
+<table>
+<tbody>
+  <tr>    
+    <td valign="top" align="center">     
+      <b><font size="6" face="Times New Roman" >Pixel-wise Dense Detector for Image Inpainting</font></b>
+      <br><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" align="center">
+         <font size="4" face="Times New Roman" > <a href="http://evergrow.github.io/"  target="_blank">Ruisong Zhang</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="http://weizequan.github.io/"  target="_blank">Weize Quan</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://sites.google.com/site/baoyuanwu2015/home"  target="_blank">Baoyuan Wu</a> </font> <font size="2" face="Times New Roman"><sup>3,4</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://scholar.google.com/citations?hl=zh-CN&user=VTrRNN4AAAAJ"  target="_blank">Zhifeng Li</a> </font> <font size="2" face="Times New Roman"><sup>5</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://sites.google.com/site/yandongming/"  target="_blank">Dong-Ming Yan</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <br> 
+         <font size="2" face="Times New Roman"> <sup>1</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ia.cas.cn/" target="_blank">National Laboratory of Pattern Recognition, Institute of Automation, Chinese Academy of Sciences</a></font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>2</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ucas.ac.cn/" target="_blank">School of Artificial Intelligence, University of Chinese Academy of Sciences</a> </font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>3</sup></font> <font size="3" face="Times New Roman" ><a href="https://www.cuhk.edu.cn/en" target="_blank">School of Data Science, the Chinese University of Hong Kong</a> </font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>4</sup></font> <font size="3" face="Times New Roman" ><a href="http://www.sribd.cn/index.php/en/" target="_blank">Secure Computing Lab of Big Data, Shenzhen Research Institute of Big Data</a> </font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>5</sup></font> <font size="3" face="Times New Roman" ><a href="https://ai.tencent.com/ailab/en/index" target="_blank">Tencent AI Lab</a> </font>
+         <br> <br> <br>
+    </td>
+    </tr>
+
+    <tr>
+      <td valign="top" align="center">
+         <img width="90%" src="./GDN_Inpainting_files/teaser.gif">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+            Deep inpainting technique fills the semantically correct and visually plausible contents in the missing regions of corrupted images. All above results are presented by our proposed framework.
+         </font>
+         </p>
+         <br>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+
+<!-- Abstract -->
+<h2>Abstract</h2>
+<table>
+  <tbody>
+  <tr>
+    <p style="text-align:justify;">
+    <font face="Times New Roman" >
+        Recent GAN-based image inpainting approaches adopt an average strategy to discriminate the generated image and output a scalar, which inevitably lose the position information of visual artifacts. Moreover, the adversarial loss and reconstruction loss (e.g., l1 loss) are combined with tradeoff weights, which are also difficult to tune. In this paper, we propose a novel detection-based generative framework for image inpainting, which adopts the min-max strategy in an adversarial process.
+        The generator follows an encoder-decoder architecture to fill the missing regions, and the detector using weakly supervised learning localizes the position of artifacts in a pixel-wise manner. Such position information makes the generator pay attention to artifacts and further enhance them. More importantly, we explicitly insert the output of the detector into the reconstruction loss with a weighting criterion, which balances the weight of the adversarial loss and reconstruction loss automatically rather than manual operation. Experiments on multiple public datasets show the superior performance of the proposed framework.
+    </font>
+    </p>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Method -->
+<h2>Detection-based Framework</h2>
+<table>
+  <tbody>
+    <tr>
+      <td valign="top" align="center">
+         <img width="90%" src="./GDN_Inpainting_files/Framework.png">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+            Our proposed detection-based inpainting framework consists of a generative network to reconstruct corrupted images and a detective network to evaluate outputs of the generator. The generator follows an encoder-decoder architecture with eight residual blocks for extracting multi-scale semantic feature to restore corrupted images. The detector is a seven-layer fully convolutional network, which is augmented by in-network up-sampling and pixel-wise loss for dense evaluation of the inpainted image. The generator and detector are trained by the weighted reconstruction loss and segmentation-based loss, respectively.
+         </font>
+        </p>
+        <br>
+      </td>
+    </tr>    
+  </tbody>
+</table>
+
+<!-- Experimental Results -->
+<h2>Experimental Results</h2>
+<table>
+  <tbody>
+    <tr>
+      <td valign="top" align="center">
+         <img width="90%" src="./GDN_Inpainting_files/Results.png"> 
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+          Above figure is qualitative comparison about visual inpainting details with previous approaches, including PConv, PEN, and GConv. The From top to bottom splited three groups from CelebA-HQ, Places2 and Paris StreetView dataset, respectively.
+         </font>
+         </p>
+         <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="center">
+         <img width="90%" src="./GDN_Inpainting_files/Application.png"> 
+         <br><br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+          Some daily applications of our inpainting framework on image translation includes object removal (the left column), text removal (the middle column) and old photo
+          restoration (the right column). For each pair of images, the top image is the input and the bottom image is the image translation result.
+         </font>
+         </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Bibtex -->
+<h2>Bibtex</h2>
+<table>
+  <tbody>
+  <tr>
+    <p style="text-align:justify;">
+    <font face="Times New Roman" >
+      Coming Soon!
+    </font>
+    </p>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Download -->
+<h2>Download</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>
+          <strong>Paper</strong> [<a href="./GDN_Inpainting_files/GDN_Inpainting.pdf" target="_blank">PDF</a>] <br><br>
+          <strong>Code </strong> [<a href="https://github.com/Evergrow/GDN_Inpainting">Github</a>] <br><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>

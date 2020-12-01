@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" slick-uniqueid="3">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./Homepage_files/sty/jemdoc.css" type="text/css">
+<style type="text/css">
+</style>
+<title>NIvsCG</title>
+</head>
+
+
+<body>
+<div id="layout-content" style="margin-top:25px">
+
+<!-- teaser -->
+<table>
+<tbody>
+  <tr>    
+    <td valign="top" align="center">     
+      <b><font size="6" face="Times New Roman" >Distinguishing Computer-Generated Images from Natural Images Using Channel and Pixel Correlation</font></b>
+      <br><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" align="center">
+         <font size="4" face="Times New Roman" > <a href="http://evergrow.github.io/"  target="_blank">Ruisong Zhang</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="http://weizequan.github.io/"  target="_blank">Weize Quan</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://lubinfan.github.io/index.html"  target="_blank">Lubin Fan</a> </font> <font size="2" face="Times New Roman"><sup>3</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://www.researchgate.net/profile/Li_Ming_Hu"  target="_blank">Liming Hu</a> </font> <font size="2" face="Times New Roman"><sup>4</sup></font> &emsp;&emsp;
+         <font size="4" face="Times New Roman" > <a href="https://sites.google.com/site/yandongming/"  target="_blank">Dong-Ming Yan</a> </font> <font size="2" face="Times New Roman"><sup>1,2</sup></font> &emsp;&emsp;
+         <br> 
+         <font size="2" face="Times New Roman"> <sup>1</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ia.cas.cn/" target="_blank">National Laboratory of Pattern Recognition, Institute of Automation, Chinese Academy of Sciences</a></font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>2</sup></font> <font size="3" face="Times New Roman" ><a href="http://english.ucas.ac.cn/" target="_blank">School of Artificial Intelligence, University of Chinese Academy of Sciences</a> </font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>3</sup></font> <font size="3" face="Times New Roman" ><a href="https://www.alibabagroup.com/en/global/home" target="_blank">Alibaba Group</a> </font>
+         <br>
+         <font size="2" face="Times New Roman"> <sup>4</sup></font> <font size="3" face="Times New Roman" ><a href="http://sklhse.tsinghua.edu.cn/" target="_blank">State Key Laboratory of Hydro-Science and Engineering, Tsinghua University</a> </font>
+         <br> <br> <br>
+    </td>
+    </tr>
+
+    <tr>
+      <td valign="top" align="center">
+         <img width="75%" src="./NIvsCG_files/comp.png">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+          A pairs of images about architecture. Computer-generated images are on the left side, and nature images are on the right side. These images are from the SPL2018 dataset.
+         </font>
+         </p>
+         <br>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top" align="center">
+         <img width="90%" src="./NIvsCG_files/network.png">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+           Architecture of our network ScNet and the hybrid correlation module. The network input is a 96 × 96 image patch, and output is the label (NI or CG). Each convolutional layer shows the kernel size and the number of feature maps, e.g., “3 × 3 Conv 32” means the kernel size is 3 × 3 and the number of output channels is 32.
+         </font>
+         </p>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+
+<!-- Abstract -->
+<h2>Abstract</h2>
+<table>
+  <tbody>
+  <tr>
+    <p style="text-align:justify;">
+    <font face="Times New Roman" >
+      With the recent tremendous advances of computer graphics rendering and image editing technologies, computer generated fake images, which in general do not reflect what happens in the reality, can now easily deceive the inspection of human visual system. In this work, we propose a convolutional neural network (CNN)-based model to distinguish computer-generated (CG) images from natural images (NIs) with channel and pixel correlation. The key component of the proposed CNN architecture is a self-coding module that takes the color images as input to extract the correlation between color channels explicitly. Unlike previous approaches that directly apply CNN to solve this problem, we consider the generality of the network (or subnetwork), i.e., the newly introduced hybrid correlation module can be directly combined with existing CNN models for enhancing the discrimination capacity of original networks. Experimental results demonstrate that the proposed network outperforms state-of-the-art methods in terms of classification performance. We also show that the newly introduced hybrid correlation module can improve the classification accuracy of different CNN architectures.
+    </font>
+    </p>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Experimental Results -->
+<h2>Experimental Results</h2>
+<table>
+  <tbody>
+    <tr>
+      <td valign="top" align="center">
+         <img width="45%" src="./NIvsCG_files/Loss_curve.png"> &emsp;&emsp;
+         <img width="45%" src="./NIvsCG_files/Accuracy_curve.png">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+          The left figure is the training loss of the ScNet and three corresponding variants. The training loss quickly decreases in the first 600 epochs and the network reaches the stability after about 1,000 epochs. The right figure shows the classification accuracies of the ScNet and three corresponding variants on the validation set. Among four networks, our proposed ScNet achieves the best performance.
+         </font>
+         </p>
+         <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="center">
+         <img width="45%" src="./NIvsCG_files/visualization.png"> &emsp;&emsp;
+         <img width="45%" src="./NIvsCG_files/kernel.png">
+         <br>
+         <p style="text-align:justify;">
+         <font face="Times New Roman" >
+          The left figure visualizes feature maps on 1 × 1 convolutional layer of three parallel Conv1 modules. The first row is a natural image, and the second row is a computer-generated image. For the natural image, the words (red block of the first row) becomes more and more obscure from left to right. However, the words in the computer-generated image (red block of the second row) are sharp for three feature maps. The right figure shows the color mapping image of weights of each 1 × 1 convolutional kernel of ScNet trained on three random splits. The weights of the three Conv1 modules of each random split are roughly arranged in (+, 0, -), with no fixed order, which is similar to the idea of the input differential image. In addition, the absolute value of the three convolutional kernel weights is in three orders of magnitude.
+         </font>
+         </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Bibtex -->
+<h2>Bibtex</h2>
+<table>
+  <tbody>
+  <tr>
+    <p style="text-align:justify;">
+    <font face="Times New Roman" >
+      @article{zhang2020distinguishing, <br/>
+        &nbsp&nbsp title={Distinguishing Computer-Generated Images from Natural Images Using Channel and Pixel Correlation}, <br/>
+        &nbsp&nbsp author={Zhang, Rui-Song and Quan, Wei-Ze and Fan, Lu-Bin and Hu, Li-Ming and Yan, Dong-Ming}, <br/>
+        &nbsp&nbsp journal={Journal of Computer Science and Technology}, <br/>
+        &nbsp&nbsp volume={35}, <br/>
+        &nbsp&nbsp pages={592--602}, <br/>
+        &nbsp&nbsp year={2020}, <br/>
+        &nbsp&nbsp publisher={Springer} <br/>
+      }
+    </font>
+    </p>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Download -->
+<h2>Download</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>
+          <strong>Paper</strong> [<a href="./NIvsCG_files/NIvsCG.pdf" target="_blank">PDF</a>] <br><br>
+          <strong>Code </strong> [<a href="https://github.com/Evergrow/JCST_NIvsCG">Github</a>] <br><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>
